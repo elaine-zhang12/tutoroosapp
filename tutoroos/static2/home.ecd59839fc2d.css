@@ -1,0 +1,50 @@
+/* took some inspiration from
+https://startbootstrap.com/previews/business-frontpage
+*/
+
+.col-lg-4 {
+    border-width: 5px;
+}
+
+h1 {
+    color: #A480CF;
+}
+
+h4 {
+    color: #F5F5DC;
+}
+h3 {
+    color: #A480CF;
+}
+
+blockquote {
+    border: 1px solid #b3b3b3;
+    border-left: 10px solid #b3b3b3;
+    border-radius: 0px;
+    background: #fafafa;
+    font-size: 18px;
+    margin: 10px;
+    padding: 10px 20px;
+}
+
+blockquote.bg-purp {
+    background: #A480CF;
+    border: 1px solid #F5F5DC;
+    border-left: 10px solid #F5F5DC;
+    color: #ffffff;
+}
+
+blockquote.bg-inside {
+    background: #F5F5DC;
+    border: 1px solid #A480CF;
+    border-left: 10px solid #A480CF;
+    color: #ffffff;
+}
+
+blockquote.bg-outside {
+    background: #A480CF;
+    border: 1px solid #F5F5DC;
+    border-left: 10px solid #F5F5DC;
+    color: #ffffff;
+}
+

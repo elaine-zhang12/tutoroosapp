@@ -1,0 +1,32 @@
+main{
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1rem;
+}
+.signup-text{
+    font-size: 2.5rem;
+    font-family: 'Quicksand', sans-serif;
+    text-align: center;
+
+}
+.signup-butt{
+    color:#b6b6b6;
+    font-size:2.5rem;
+    font-family: 'Quicksand', sans-serif;
+    padding:100px;
+    margin-left:50px;
+    border-radius:20px;
+}
+main{
+    min-height:100vh;
+    background-position: 0px 0px,0px 0px,0px 0px,0px 0px,0px 0px,0px 0px,0px 0px,0px 0px,0px 0px,0px 0px,0px 0px;
+    background-image: radial-gradient(18% 28% at 24% 50%, #CEF5FF75 7%, #073AFF00 100%),radial-gradient(18% 28% at 18% 71%, #FFFFFF59 6%, #073AFF00 100%),radial-gradient(70% 53% at 36% 76%, #E751B5FF 0%, #073AFF00 100%),radial-gradient(42% 53% at 15% 94%, #D0CEFF8A 7%, #073AFF00 100%),radial-gradient(42% 53% at 34% 72%, #A692C48A 7%, #073AFF00 100%),radial-gradient(18% 28% at 35% 87%, #FFFFFFFF 7%, #073AFF00 100%),radial-gradient(31% 43% at 7% 98%, #FFFFFFFF 24%, #073AFF00 100%),radial-gradient(21% 37% at 72% 23%, #D0CEFF8A 24%, #073AFF00 100%),radial-gradient(35% 56% at 91% 74%, #8A4FFFF5 9%, #073AFF00 100%),radial-gradient(74% 86% at 67% 38%, #8A4FFFF5 24%, #073AFF00 100%),linear-gradient(125deg, #4EB5FFFF 1%, #4C00FCFF 100%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    margin:0;
+    padding:0;
+}
+button:focus{
+    filter:brightness(1.3);
+}

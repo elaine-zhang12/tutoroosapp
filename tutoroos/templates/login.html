@@ -1,0 +1,25 @@
+{% load socialaccount %}
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Google Login</title>
+ 
+    <link type="text/css" rel="stylesheet" href = "{% static 'styles.css' %}">
+    <link type="text/css" rel="stylesheet" href = "{% static 'login.css' %}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Rubik+Pixels&display=swap" rel="stylesheet">
+    
+  </head>
+  <body>
+    <div class="container">
+      <div class="google-button">
+        <a href="{% provider_login_url 'google' %}">Sign in with Google</a>
+      </div>
+    </div>
+  </body>
+</html>

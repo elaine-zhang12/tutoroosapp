@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Review</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+          rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+          crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+    <link type="text/css" rel="stylesheet" href="{% static 'styles.css' %}">
+    <style>
+        h1 {
+                padding-top: 25px;
+                color:#172A3A;}
+        .container-lg {
+            position: relative;
+            background-position: center;
+            height: 100vh;
+            top: 0px;
+            width: 1000px;
+
+            background: #FFFFFF;
+            box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.25);
+
+        }
+        #title_text {
+            position: absolute;
+            left: 15.8%;
+            right: 15.8%;
+            top: 24.02%;
+            bottom: 71.09%;
+            background: #FFFFFF;
+        }
+        #review {
+            position: absolute;
+            left: 15.8%;
+            right: 15.8%;
+            top: 36.82%;
+            bottom: 43.65%;
+
+            background: #FFFFFF;
+        }
+        #count {
+            position: absolute;
+            left: 76.48%;
+            right: 15.8%;
+            top: 29.39%;
+            bottom: 69.04%;
+
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 15px;
+            line-height: 24px;
+
+            text-align: right;
+
+            color: rgba(0, 0, 0, 0.58);
+        }
+        #count-2 {
+            position: absolute;
+            left: 76.48%;
+            right: 15.8%;
+            top: 56.84%;
+            bottom: 41.6%;
+
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 15px;
+            line-height: 24px;
+
+            text-align: right;
+
+            color: rgba(0, 0, 0, 0.58);
+        }
+        input {
+            gap: 10px;
+            position: absolute;
+            left: 43.06%;
+            right: 44.79%;
+            top: 60.74%;
+            bottom: 35.35%;
+        }
+        img {
+            position: absolute;
+            left: 68.32%;
+            right: 1.65%;
+            top: 70.41%;
+            bottom: -10%;
+            width:17%;
+            height:25%;
+        }
+
+    </style>
+</head>
+<body>
+
+
+
+<div class="container-lg mx-auto">
+    <h1 class="text-center"> Send in a Review for {{tutor.name}} </h1>
+    <form method="post" action="{% url 'review' tutor_id=tutor.id %}">
+        {% csrf_token %}
+        <fieldset>
+<!--            <label for="title_text">Review title: </label>-->
+            <textarea id="title_text" name="title_text" maxlength="100" placeholder="Title: " required></textarea>
+            <p id="count"><span id="char-count">0</span>/100</p>
+<!--            <label for="review">Review: </label>-->
+            <textarea id="review" name="review" maxlength="400" placeholder="Write your review here." required></textarea>
+            <p id="count-2"><span id="char-count2">0</span>/400</p>
+        </fieldset>
+        <input class ="rounded" type="submit" value="Submit" style="background-color: #779BE7; border:#779BE7">
+    </form>
+    <img src="{% static 'review_graphic.png' %}">
+</div>
+
+<script>
+  const title = document.getElementById('title_text');
+  const charCount = document.getElementById('char-count');
+
+  const textBox2 = document.getElementById('review');
+  const charCount2 = document.getElementById('char-count2');
+
+  title.addEventListener('input', () => {
+    charCount.innerText = title.value.length;
+  });
+
+  textBox2.addEventListener('input', () => {
+    charCount2.innerText = textBox2.value.length;
+  });
+</script>
+
+</body>
+</html>

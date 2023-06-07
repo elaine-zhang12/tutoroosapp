@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+          rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+          crossorigin="anonymous">
+    <link type="text/css" rel="stylesheet" href="{% static 'classsearch.css' %}">
+    <!--    <link type="text/css" rel="stylesheet" href="{% static 'styles.css' %}">-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+
+</head>
+<body>
+<div class="container" id="main">
+    {% block content %}
+    <h3>Remove Classes to Tutor</h3>
+
+    {% endblock %}
+    <form action="{% url 'removeClass' %}" method="POST">
+        {% csrf_token %}
+        <p>{{empty}}</p>
+
+        {% for i in courses %}
+        <div class="row rounded border border-1" style="padding-top:5px;">
+            <div class="col-sm-3" name="mnemonic">
+                <input class="form-check-input" type="checkbox" name="add_courses" value="{{i.id}}"
+                       id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault"><h5 style="padding-top: 5px">{{i.mnemonic}}</h5>
+                </label>
+            </div>
+            <div class="col-sm-3" name="course_number">
+                <p>{{i.course_number}}</p>
+            </div>
+            <div class="col-sm-6" name="course_name">
+                <p>{{i.course_name}}</p>
+            </div>
+        </div>
+        {% endfor %}
+        <div style="padding-top: 20px">
+            <button type="submit" id="add" class="btn-danger btn-sm"
+                    style="border-color: #A480CF; bg: tansparent; hover-bg: transparent; background-color: #A480CF;">
+                DELETE
+            </button>
+            <a href="{% url 'view_profile' %}">
+                <button type="button" class="btn-danger btn-sm"
+               style="border-color: #A480CF; bg: tansparent; hover-bg: transparent; background-color: #A480CF;">EXIT</button>
+            </a>
+        </div>
+    </form>
+
+</div>
+
+
+</body>
+</html>

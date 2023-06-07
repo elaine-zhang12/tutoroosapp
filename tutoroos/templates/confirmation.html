@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+          rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+          crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+    <style>
+        .container-md {
+            position: relative;
+            width: 762px;
+            height: 306px;
+            margin-top: 100px;
+            background: #FFFFFF;
+            box-shadow: 0px 4px 4px #9F87AF;
+        }
+        .button-1 {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            padding: 9px 12px;
+            gap: 10px;
+            outline: none;
+            position: absolute;
+            height: 38px;
+            left: 235px;
+            right: 407px;
+            top: 236px;
+            border: 2px solid #9F87AF;
+            background: #9F87AF;
+            border-radius: 42px;
+        }
+        .button-1:hover {
+            background-color: #846c94;
+            border-color: #846c94
+        }
+        .button-2{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            padding: 9px 12px;
+            gap: 10px;
+            outline: none;
+            position: absolute;
+            height: 38px;
+            left: 415px;
+            right: 227px;
+            top: 236px;
+
+            border: 2px solid #9F87AF;
+            background: #9F87AF;
+            border-radius: 42px;
+        }
+        .button-2:hover {
+            background-color: #846c94;
+            border-color: #846c94
+        }
+        body{
+            background-image: url("{% static 'confirmationbg.png' %}");
+            background-size: cover;
+        }
+
+        label{
+          display: inline-block;
+          padding: 6px;
+          border: 1px solid #D264B6;
+          border-radius: 20px;
+          box-sizing: border-box;
+          margin-top: 10px;
+        }
+
+
+    </style>
+
+</head>
+<body>
+<div class="container-md rounded">
+    <h3 style="padding-top:25px; padding-left:20px;">Courses you have added</h3>
+    <div style="padding-left:20px;">
+        {% for i in tutor.courses.all %}
+        <label>{{i.mnemonic}} {{i.course_number}}</label>
+        {% endfor %}
+    </div>
+
+
+    <a href="{% url 'tutorreg' %}">
+        <button type="button" class="btn-primary button-1">Add More</button>
+    </a>
+    <a href="{% url 'table' %}">
+        <button type="button" class="btn-primary button-2">Continue</button>
+    </a>
+</div>
+</body>
+</html>

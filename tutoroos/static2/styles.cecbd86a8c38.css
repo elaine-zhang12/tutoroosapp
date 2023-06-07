@@ -1,0 +1,286 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Koulen&family=Lato&family=Nunito&family=Playfair+Display:ital@1&family=Prata&family=Raleway:ital,wght@1,100&family=Roboto&family=Roboto+Condensed&family=Teko&display=swap');
+
+:root{
+    --cute_teal:#03C0C1;
+    --home_green:#0E190D;
+    --bold_blue:#172A3A;
+    --uva_orange:#FCA311;
+    --grape_purple: #9F87AF;
+    --lavender_purple: #A480CF;
+    --sky_blue: #779be7;
+    --light_blue:#49b6ff;
+    --sky_magenta:#d264b6;
+    --rose_bonbon:#FF499E;
+
+    --uva_orange_dark:#B6740A;
+    --cute_teal_dark:#009292;
+
+
+
+    --white: #f0f0f0;
+    --black: #111111FF;
+
+    --bg:  #ede5da;
+    --text: #0e0d0d;
+}
+a:hover{
+  filter:saturate(2)!important;
+}
+body{
+    background-color: var(--bg);
+}
+p{
+    color: var(--text);
+}
+nav .btn{
+  --bs-btn-border-color: transparent;
+}
+.navbar-brand {
+  color: var(--cute_teal);
+}
+
+.navbar-toggler-icon {
+  background-color: var(--cute_teal);
+}
+
+.navbar-nav {
+  color: var(--cute_teal);
+}
+
+.navbar-nav .nav-item.active .nav-link {
+  color: var(--cute_teal);
+}
+
+.navbar-nav .nav-item:not(.active) .nav-link {
+  color: var(--uva_orange);
+}
+
+.blur {
+    position: relative;
+    height: 75vh;
+    overflow: hidden;
+    background: linear-gradient(to bottom, var(--cute_teal), var(--grape_purple));
+    margin:0;
+    padding:0;
+  }
+
+  .content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    margin:0;
+    padding:0;
+  }
+  .blur::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color:rgba(14,14,14,0.6);
+    filter: blur(5px);
+  }
+  .blur::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: inherit;
+    filter: blur(5px);
+  }
+  .w_color{
+    color: var(--white)!important
+  }
+  .o_color{
+    color: var(--uva_orange)!important
+  }
+  .b_color{
+    color: var(--bold_blue)!important
+  }
+  .p_color{
+    color: var(--lavender_purple)!important
+  }
+  .m_color{
+    color: var(--sky_magenta)!important
+  }
+  .sb_color{
+    color: var(--sky_blue)!important
+  }
+
+  .w-color{
+    color: var(--white)!important
+  }
+  .o-color{
+    color: var(--uva_orange)!important
+  }
+  .b-color{
+    color: var(--bold_blue)!important
+  }
+  .p-color{
+    color: var(--lavender_purple)!important
+  }
+  .m-color{
+    color: var(--sky_magenta)!important
+  }
+  .sb-color{
+    color: var(--sky_blue)!important
+  }
+
+  .bg-w{
+    background: var(--white)!important
+  }
+  .bg-o{
+    background: var(--uva_orange)!important
+  }
+  .bg-b{
+    background: var(--bold_blue)!important
+  }
+  .bg-g{
+    background: var(--home_green)!important
+  }
+  .bg-p{
+    background: var(--lavender_purple)!important
+  }
+  .bg-m{
+    background: var(--sky_magenta)!important
+  }
+  .bg-sb{
+    background: var(--sky_blue)!important
+  }
+  .bg-nav{
+    background: var(--home_green);
+
+  }
+  .bg-nav:after{
+    content:'';
+    position:absolute;
+    top:50px;
+    left:0;
+    bottom:0;
+    height:100%;
+    width:100%;
+    opacity:1;
+    z-index:1;
+    background: linear-gradient(180deg, var(--home_green) 0%, rgba(0,212,255,0) 100%);
+  }
+  .nav{
+    margin-right:25px;
+  }
+  .svg-icon {
+    width: 1em;
+    height: 1em;
+  }
+
+/* @OVERRIDE BOOTSTRAP */
+.btn{
+    --bs-btn-border-color: var(--lavender_purple);
+    --bs-btn-bg: inherit!important;
+    --bs-btn-hover-bg: transparent!important;
+    --bs-btn-color: var(--lavender_purple)!important;
+    --bs-btn-hover-color: var(--sky_blue)!important;
+    --bs-btn-hover-border-color: var(--sky_blue)!important;
+}
+
+.navbar-toggler-icon {
+  background-color: var(--sky_blue);
+}
+
+.navbar-nav {
+  color: var(--sky_blue);
+}
+
+.navbar-nav .nav-item.active .nav-link {
+  color: var(--sky_blue);
+}
+
+.navbar-nav .nav-item:not(.active) .nav-link {
+  color: var(--sky_magenta);
+}
+.background {
+  position: fixed;
+  top: -25;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  opacity:0.25;
+
+  /* filter:saturate(5);
+  filter:contrast(1.2); */
+
+
+}
+.background::before{
+
+  content:'';
+  position: fixed;
+  filter:saturate(3);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.createAnAcc{
+  align-items: center;
+  align-self:center;
+  position:absolute;
+  top:491px;
+  left:462px;
+  
+}
+.createAnAcc .btn{
+
+font-family: 'Quicksand';
+font-weight: 100;
+font-size: 28px;
+color: #fff;
+background: linear-gradient(90deg, #c092b487 19%, #c500cc 100%);
+padding: 5px 50px;
+border: solid #a480cf 2px;
+box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px;
+border-radius: 11px 12px 12px;
+margin-top:60px;
+margin-left:113.88px;
+align-self:center;
+transition : 1000ms;
+transform: translateY(0);
+display: flex;
+flex-direction: row;
+cursor: pointer;
+z-index: 2;
+}
+
+.createAnAcc .btn:hover{
+
+transition : 1000ms;
+padding: 10px 50px;
+transform : translateY(-7px);
+background: linear-gradient(90deg, #c092b487 19%, #c500cc 100%);
+color: #2e2b2b;
+border: solid 2px #27292b;
+}
+
+
+/*
+Ignore for now, will be useful when we create a light theme and a dark theme
+IGNORE BEGIN
+*/
+[data-theme="dark"] {
+    --bg: #111111FF;
+    --text: #e1e1e1;
+}
+[data-theme="light"] {
+    --bg: #11111120;
+    --text: rgba(14,14,14,0.9);
+}
+/*
+IGNORE END
+*/

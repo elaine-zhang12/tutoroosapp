@@ -1,0 +1,40 @@
+body {
+    background: linear-gradient(to bottom right, var(--lavender_purple), var(--sky_blue), var(--light_blue), var(--sky_magenta), var(--rose_bonbon));
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+  }
+  @keyframes gradientAnimation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .google-button {
+    display: flex;
+    justify-content: center;
+  }
+  .google-button a {
+    font-family: 'Rubik Pixels', cursive;
+    color: rgba(231, 231, 231, 0.913);
+    font-size: 2rem;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 5px;
+    background: rgba(142,83,200,0.25);
+    -webkit-backdrop-filter: blur(40px);
+    backdrop-filter: blur(4px);
+    border: 40px inset rgba(142,83,200,0.25);
+  }

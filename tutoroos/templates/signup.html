@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+{% load static %}
+<html>
+<style>
+
+</style>
+<head>
+  <link rel="stylesheet" href = "{% static 'styles.css' %}">
+  <link rel="stylesheet" href = "{% static 'signup.css' %}">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet'>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha512-z4OUqw38qNLpn1libAN9BsoDx6nbNFio5lA6CuTp9NlK83b89hgyCVq+N5FdBJptINztxn1Z3SaKSKUS5UP60Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  
+</head>
+<body>
+  <main>
+    <h2 class = "signup-text pt-4 w-color">Welcome to our tutoring site! Are you a student or a tutor?</h2>
+    <div class = "justify-content-center pt-4 p-2 d-flex flex-row">
+      <button id = "student" class = "p-4 col-md-4 signup-butt bg-m" onclick="document.getElementById('tutor').style.filter='brightness(1)'; document.getElementById('student').style.filter='brightness(1.3)'; document.getElementById('id02').style.display='none'; document.getElementById('id01').style.display='block'">Student</button>
+      <button id = "tutor" class = "p-4 col-md-4 signup-butt bg-sb" onclick="document.getElementById('student').style.filter='brightness(1)'; document.getElementById('tutor').style.filter='brightness(1.3)'; document.getElementById('id01').style.display='none'; document.getElementById('id02').style.display='block'">Tutor</button>  
+    </div>
+
+    <div id="id01"style = "display:none" >
+      <form class="pt-5 modal-content" action="{% url 'MakeNewStudent' %}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="container justify-content-center align-items-center text-align-center " style=" text-align: center;">
+          <h1>Sign Up</h1>
+          <p>Please fill in this form to sign up as a student.</p>
+          <hr>
+        
+          <div class = "w-100" style=" text-align: center;">
+            <label class= "py-2 w-color row" for="first_name"><b>First Name</b></label>
+            
+            <input class = "rounded-pill p-2" type="text" placeholder="Enter First Name" name="fname" id="first_name" maxlength="20"  required>
+            <label class= "py-2 w-color row" for="lname"><b>Last Name</b></label>
+            <input class = "rounded-pill p-2" type="text" placeholder="Enter Last Name" name="lname" id="lname" maxlength="20"  required>
+            <label  class= "py-2 row" for="student_pic"><b>Upload a Photo</b></label>
+            <input type="file" id="student_pic" name="student_pic" placeholder="Photo" required>
+            <br>
+            <button type="submit" class="mt-5 signupbtn w-25 rounded-pill p-2 bg-m"  style = "filter:brightness(1.2)">Sign Up</button>
+          </div>
+        </div>
+        
+      </form>
+
+    </div>
+
+
+
+    <div id="id02" style = "display:none">
+
+      <form class="pt-5 modal-content" action="{% url 'MakeNewTutor' %}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="container">
+          <h1 style=" text-align: center;">Sign Up</h1>
+          <p style=" text-align: center;">Please fill in this form to sign up as a tutor.</p>
+          <hr>
+          <div style=" text-align: center;">
+            <label class= "row" for="name"><b>First Name</b></label>
+            <input class = "rounded-pill p-2" type="text" placeholder="Enter First Name" name="name" id="name" maxlength="20"  required>
+            <label  class= "py-2 row" for="last_name"><b>Last Name</b></label>
+            <input class = "rounded-pill p-2"  type="text" placeholder="Enter Last Name" name="last_name" id="last_name" maxlength="20" id="last_name"  required>
+            <label  class= "py-2 row" for="cost"><b>Cost/Hr</b></label>
+            <input class = "rounded-pill p-2" type="number" placeholder="Enter Price" name="cost" id="cost" min="0" max="100" required>
+            <label  class= "py-2 row" for="pic"><b>Upload a Photo</b></label>
+            <input type="file" id="pic" name="pic" placeholder="Photo" required>
+            <br>
+            <button type="submit" class="mt-5 signupbtn w-25 rounded-pill p-2 bg-sb" style = "filter:brightness(1.2)">Sign Up</button>
+          </div>
+        </div>
+       
+      </form>
+    </div>
+  </main>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js" integrity="sha512-2rNj2KJ+D8s1ceNasTIex6z4HWyOnEYLVC3FigGOmyQCZc2eBXKgOxQmo3oKLHyfcj53uz4QMsRCWNbLd32Q1g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.min.js" integrity="sha512-1/RvZTcCDEUjY/CypiMz+iqqtaoQfAITmNSJY17Myp4Ms5mdxPS5UV7iOfdZoxcGhzFbOm6sntTKJppjvuhg4g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</body>
+<!--// Get the modal-->
+<!--var modal = document.getElementById('id01');-->
